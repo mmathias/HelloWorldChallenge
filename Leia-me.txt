@@ -1,0 +1,13 @@
+1. Definir a variável de ambiente GRAILS_HOME
+
+==> C:\springsource\grails-1.3.7
+
+==> Sendo que o StringSource Tool Suite foi instalado em C:\springsource\sts-2.6.0.RELEASE\STS.exe
+
+2. Instalar o Plugin acegi
+   
+install-plugin acegi
+
+3. Criar as classes modelo.User, modelo.Role e modelo.Requestmap
+
+create-auth-domains modelo.User modelo.Role modelo.Requestmap
