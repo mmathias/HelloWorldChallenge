@@ -1,8 +1,20 @@
+//dataSource {
+//    pooled = true
+//    driverClassName = "org.hsqldb.jdbcDriver"
+//    username = "sa"
+//    password = ""
+//}
+
 dataSource {
-    pooled = true
-    driverClassName = "org.hsqldb.jdbcDriver"
-    username = "sa"
-    password = ""
+	dbCreate = "update"
+	driverClassName = "org.postgresql.Driver"
+	dialect = org.hibernate.dialect.PostgreSQLDialect
+
+	uri = new URI(System.env.DATABASE_URL?:"postgres://root:123456@localhost/encomendas")
+
+	url = "jdbc:postgresql://"+uri.host+uri.path
+	username = uri.userInfo.split(":")[0]
+	password = uri.userInfo.split(":")[1]
 }
 
 //    DATASOURCE PARA O MYSQL
@@ -50,23 +62,60 @@ hibernate {
 // environment specific settings
 environments {
     development {
-        dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:mem:devDB"
-			logSql = "true"
-        }
+//        dataSource {
+//            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+//            url = "jdbc:hsqldb:mem:devDB"
+//			logSql = "true"
+//        }
+		dataSource {
+			dbCreate = "create-drop"
+			driverClassName = "org.postgresql.Driver"
+			dialect = org.hibernate.dialect.PostgreSQLDialect
+		
+			uri = new URI(System.env.DATABASE_URL?:"postgres://postgres:123456@localhost/encomendas")
+		
+			url = "jdbc:postgresql://"+uri.host+uri.path
+			username = uri.userInfo.split(":")[0]
+			password = uri.userInfo.split(":")[1]
+		}
     }
     test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:hsqldb:mem:testDb"
-        }
+//        dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:hsqldb:mem:testDb"
+//        }
+		dataSource {
+			dbCreate = "update"
+			driverClassName = "org.postgresql.Driver"
+			dialect = org.hibernate.dialect.PostgreSQLDialect
+		
+			uri = new URI(System.env.DATABASE_URL?:"postgres://postgres:123456@localhost/encomendas")
+		
+			url = "jdbc:postgresql://"+uri.host+uri.path
+			username = uri.userInfo.split(":")[0]
+			password = uri.userInfo.split(":")[1]
+		}
+//		dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+//        
     }
     production {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
-        }
+//        dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+//        }
+		dataSource {
+			dbCreate = "update"
+			driverClassName = "org.postgresql.Driver"
+			dialect = org.hibernate.dialect.PostgreSQLDialect
+		
+			uri = new URI(System.env.DATABASE_URL?:"postgres://postgres:123456@localhost/encomendas")
+		
+			url = "jdbc:postgresql://"+uri.host+uri.path
+			username = uri.userInfo.split(":")[0]
+			password = uri.userInfo.split(":")[1]
+		}
     }
 }
 
