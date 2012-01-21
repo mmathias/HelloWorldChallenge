@@ -85,7 +85,7 @@ environments {
 //            url = "jdbc:hsqldb:mem:testDb"
 //        }
 		dataSource {
-			dbCreate = "update"
+			dbCreate = "create-drop"
 			driverClassName = "org.postgresql.Driver"
 			dialect = org.hibernate.dialect.PostgreSQLDialect
 		
