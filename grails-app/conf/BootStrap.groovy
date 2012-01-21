@@ -81,10 +81,10 @@ class BootStrap {
 		usuarioProdutor.addToAuthorities(roleProdutor)
 		usuarioCliente.addToAuthorities(roleCliente)
 		
-		Produto paoDeBatata = new Produto(valor: 123.00, nome: "Pão de batata", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
+		Produto paoDeBatata = new Produto(valor: 123.00, nome: "Pao de batata", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
 		Produto boloDeCenoura = new Produto(valor: 333.00, nome: "Bolo de cenoura", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
 		Produto croassaintDeChocolate = new Produto(valor: 20.00, nome: "Croassaint de chocolate", dataCadastro: new Date(), produtor: produtor ).save(failOnError: true)
-		Produto paoIntegral= new Produto(valor: 13.00, nome: "Pão integral", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
+		Produto paoIntegral= new Produto(valor: 13.00, nome: "Pao integral", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
 		Produto tortaAmendoim = new Produto(valor: 23.00, nome: "Torta de amendoim", dataCadastro: new Date(), produtor: produtor).save(failOnError: true)
 		
 		
